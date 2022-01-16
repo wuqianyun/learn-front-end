@@ -29,7 +29,7 @@ module.exports = {
           },
           {
             title:"css",
-            children:[['../guide/foundation/html/first.md',"html"]]
+            children:[['../guide/foundation/css/examples.md',"示例"]]
           },
           {
             title:"js",
@@ -39,18 +39,10 @@ module.exports = {
       },
       
       ['../guide/codeRecord/demo.md','代码&问题--记录'],
+
+      ['../guide/command/demo.md','命令与工具相关'],
       
-      {
-        title:"命令与工具相关",
-        path:null,
-        collapsable:false
-      },
-      {
-        title:"vue",
-        path:null,
-        collapsable:false,
-        children:[['../guide/vue/valueTransist.md',"组件传值"]]
-      }
+      ['../guide/vue/demo.md',"vue3"]
     ]
   },
   configureWebpack: {

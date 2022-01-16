@@ -14,7 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git remote add origin https://github.com/wuqianyun/learn-front-end.git
-git push -u origin main
+git push -f git@github.com:wuqianyun/learn-front-end.git master:gh-pages
 
 cd -

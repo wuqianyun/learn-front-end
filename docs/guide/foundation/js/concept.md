@@ -13,3 +13,10 @@
 4、 按照这个队列顺序将这些任务片段送进JS进程
 
 5、 JS线程执行一个又一个的任务片段
+
+## 箭头函数
+没有this，this 会作为变量一直向上级词法作用域查找，直至找到为止
+
+## 数组方法
+改变原数组：push() pop() shift() unshift() splice() sort() reverse()
+不改变返回新数组：filter() concat() slice(
