@@ -44,3 +44,24 @@ showChineseNumTitle(e) {
 const reg = this.ishightLight ? new RegExp(this.filterValue,'g') : null
 str.replace(reg,()=>{return `<span class="kui-highlight">${this.filterValue}</span>`})
 ```
+
+## 表单滚动定位到校验出错的位置
+```js
+this.$refs.componentAFormEle.validate(async valid => {
+  if (!valid) {
+    await this.$nextTick()
+    this.scrollToError(this.$refs.componentAFormEle.$el)
+  }
+})
+const scrollToError = (
+  el,
+  scrollOption = {
+    behavior: 'smooth',
+    block: 'center'
+  }
+) => {
+  const isError = el.getElementsByClassName('is-error')
+  // querySelector
+  isError[0].scrollIntoView(scrollOption)
+}
+```

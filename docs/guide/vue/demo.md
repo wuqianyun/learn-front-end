@@ -51,6 +51,9 @@ app.component('my-component', {
 })
 ```
 class与style大部分同
+:::tip
+当在组件中使用时，自定义指令总是会被应用在组件的根节点上,和 attribute 不同，指令不会通过 v-bind="$attrs" 被传入另一个元素。组件可能会有多个根节点,当被应用在一个多根节点的组件上时，指令会被忽略，并且会抛出一个警告。
+:::
 
 ## vue指令
 > 指令缩写：
@@ -117,3 +120,30 @@ v-for 与 v-if,当它们处于同一节点，v-if 的优先级比 v-for 更高�
 
 ## API
 defineAsyncComponent
+
+## 渲染函数
+#### javascript代替模版功能
+>- v-model
+```js
+props: ['modelValue'],
+emits: ['update:modelValue'],
+render() {
+  return h(SomeComponent, {
+    modelValue: this.modelValue,
+    'onUpdate:modelValue': value => this.$emit('update:modelValue', value)
+  })
+}
+```
+>- 插槽
+
+#### 工厂函数实现重复子VNodes
+下面这渲染函数用完全合法的方式渲染了 20 个相同的段落：
+```js
+render() {
+  return h('div',
+    Array.from({ length: 20 }).map(() => {
+      return h('p', 'hi')
+    })
+  )
+}
+```

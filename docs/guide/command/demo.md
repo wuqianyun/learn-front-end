@@ -16,6 +16,9 @@ vi -- 编辑
 
 source -- 执行
 
+#### npm
+npm list -g --depth 0 -- 查看系统上已安装的全局软件包
+
 ##  应用场景
 
 #### git已commit修改注释信息
